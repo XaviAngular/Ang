@@ -3,7 +3,7 @@ export class Card {
 		public id:number,
 		public titulo:string,
 		public precio:number,
-		public imagen:string,
+		public foto:string,
 		public descripcion:string,
 		public idCat:number
 		){}
