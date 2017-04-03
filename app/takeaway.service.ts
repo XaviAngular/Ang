@@ -4,10 +4,14 @@ import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs/Observable';
 
 @Injectable()
-export class TakeawayService {
+export class takeAwayService {
 
   constructor(private _http: Http) { }
 
+getPlatos(){
+	return this._http.get("http://localhost/tkaApi/api.php/getPlatos")
+			.map(res=>res.json());
+}
 
 
 }
