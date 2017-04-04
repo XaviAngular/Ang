@@ -1,5 +1,5 @@
-<div class="container">
-  <div class="row">
+<div class="row">
+<h4>Entrantes</h4>
    <div *ngFor="let plato of platos">
    <div class="col s12 m3 l4" *ngIf="plato.id_categoria==1">
      <div class="card" >
@@ -18,5 +18,47 @@
    </div>   
   </div>
 </div>
+<div class="row">
+<h4>Principales</h4>
+   <div *ngFor="let plato of platos">
+   <div class="col s12 m3 l4" *ngIf="plato.id_categoria==2">
+     <div class="card" >
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="assets/{{plato.foto}}">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">{{plato.nombre}}<i class="material-icons right">more_vert</i></span>
+        <p><a href="#">{{plato.precio}}</a></p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">{{plato.nombre}}<i class="material-icons right">close</i></span>
+        <p>{{plato.descripcion}}</p>
+      </div>
+    </div>
+   </div>   
+  </div>
 </div>
+<div class="row">
+<h4>Postres</h4>
+   <div *ngFor="let plato of platos">
+   <div class="col s12 m3 l4" *ngIf="plato.id_categoria==3">
+     <div class="card" >
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="assets/{{plato.foto}}">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">{{plato.nombre}}<i class="material-icons right">more_vert</i></span>
+        <p><a href="#">{{plato.precio}}</a></p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">{{plato.nombre}}<i class="material-icons right">close</i></span>
+        <p>{{plato.descripcion}}</p>
+      </div>
+    </div>
+   </div>   
+  </div>
+</div>
+
+
+
 
