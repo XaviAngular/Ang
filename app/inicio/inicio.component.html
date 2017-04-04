@@ -1,7 +1,7 @@
 <div class="row">
 <h4>Entrantes</h4>
-   <div *ngFor="let plato of platos">
-   <div class="col s12 m3 l4" *ngIf="plato.id_categoria==1">
+   <div *ngFor="let plato of platos | filtro: 'id_categoria': '1'">
+   <div class="col s12 m3 l4">
      <div class="card" >
       <div class="card-image waves-effect waves-block waves-light">
         <img class="activator" src="assets/{{plato.foto}}">
@@ -20,8 +20,8 @@
 </div>
 <div class="row">
 <h4>Principales</h4>
-   <div *ngFor="let plato of platos">
-   <div class="col s12 m3 l4" *ngIf="plato.id_categoria==2">
+   <div *ngFor="let plato of platos | filtro: 'id_categoria': '2'">
+   <div class="col s12 m3 l4">
      <div class="card" >
       <div class="card-image waves-effect waves-block waves-light">
         <img class="activator" src="assets/{{plato.foto}}">
@@ -40,8 +40,8 @@
 </div>
 <div class="row">
 <h4>Postres</h4>
-   <div *ngFor="let plato of platos">
-   <div class="col s12 m3 l4" *ngIf="plato.id_categoria==3">
+   <div *ngFor="let plato of platos | filtro: 'id_categoria': '3'">
+   <div class="col s12 m3 l4">
      <div class="card" >
       <div class="card-image waves-effect waves-block waves-light">
         <img class="activator" src="assets/{{plato.foto}}">
@@ -53,6 +53,20 @@
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">{{plato.nombre}}<i class="material-icons right">close</i></span>
         <p>{{plato.descripcion}}</p>
+        <div class="row">
+          <div class="col s3  grey darken-2">
+             <i class="material-icons">add</i>x1
+          </div>
+          <div class="col s3  grey darken-2">
+             <i class="material-icons">add</i>x2
+          </div>
+          <div class="col s3  grey darken-2">
+             <i class="material-icons">add</i>x3
+          </div>
+          <div class="col s3  grey darken-2">
+             <i class="material-icons">add</i>x4
+          </div>
+        </div>
       </div>
     </div>
    </div>   

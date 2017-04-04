@@ -13,6 +13,7 @@ import { CategoriasComponent } from './lacueva/categorias/categorias.component';
 import { PlatosComponent } from './lacueva/platos/platos.component';
 
 import {routing,appRoutingProviders} from './app.routing';
+import { FiltroPipe } from './filtro.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {routing,appRoutingProviders} from './app.routing';
     ContactoComponent,
     LacuevaComponent,
     CategoriasComponent,
-    PlatosComponent
+    PlatosComponent,
+    FiltroPipe
   ],
   imports: [
     BrowserModule,
