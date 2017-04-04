@@ -10,6 +10,8 @@ import { NosotrosComponent } from './nosotros/nosotros.component';
 
 import {routing,appRoutingProviders} from "./app.routing";
 import { FiltroPipe } from './filtro.pipe';
+import { LacuevaComponent } from './lacueva/lacueva.component';
+import { EditCardComponent } from './lacueva/edit-card/edit-card.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { FiltroPipe } from './filtro.pipe';
     InicioComponent,
     ContactoComponent,
     NosotrosComponent,
-    FiltroPipe
+    FiltroPipe,
+    LacuevaComponent,
+    EditCardComponent
   ],
   imports: [
     BrowserModule,
