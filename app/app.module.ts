@@ -5,25 +5,19 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
-import { InfoComponent } from './info/info.component';
-import { FotosComponent } from './fotos/fotos.component';
 import { ContactoComponent } from './contacto/contacto.component';
-import { LacuevaComponent } from './lacueva/lacueva.component';
-import { CategoriasComponent } from './lacueva/categorias/categorias.component';
-import { PlatosComponent } from './lacueva/platos/platos.component';
+import { NosotrosComponent } from './nosotros/nosotros.component';
 
-import {routing,appRoutingProviders} from './app.routing';
+import {routing,appRoutingProviders} from "./app.routing";
+import { FiltroPipe } from './filtro.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
-    InfoComponent,
-    FotosComponent,
     ContactoComponent,
-    LacuevaComponent,
-    CategoriasComponent,
-    PlatosComponent
+    NosotrosComponent,
+    FiltroPipe
   ],
   imports: [
     BrowserModule,

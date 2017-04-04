@@ -1,48 +1,52 @@
 import { Component, OnInit } from '@angular/core';
 
 import {Card} from "../model/card";
-import {takeAwayService} from "../takeaway.service";
+import {TakeawayService} from "../takeaway.service"
+
+import {FiltroPipe} from "../filtro.pipe";
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css'],
-  providers:[takeAwayService]
+  providers: [TakeawayService]
 })
 export class InicioComponent implements OnInit {
-	public titulo:string;
-	public numero:number;
-	public card1:Card;
-	public card2:Card;
 	public platos:Card[];
+	public status: string;
+	public errorMessage;
+	public loading;
 
-  constructor(private _tkaService:takeAwayService) {
-  	this.titulo="Hola que tal";
-  	this.numero=10;
-  	this.card1 = new Card(5,"Calamares Romana",10.50,"calamaresRomana.jpg","Texto de descripción", 2);
-  	this.card2 = new Card(2,"Sepia plancha", 8.70,"sepiaplancha.jpg","Texto de descripción", 1);
-  	this.platos = [this.card1,this.card2];
-   }
+  constructor(private _takeawayService: TakeawayService) {
+  		
+  	}
 
   ngOnInit() {
-    this.listaPlatos();
+ 	this.getPLatos();
   }
 
-  listaPlatos(){
-    this._tkaService.getPlatos()
-      .subscribe(
-          result => {
-            if (result.status=="success"){
-             this.platos=result.data;
-            }
-            else {
-              alert("Error petición Mysql");
-            }
-          },
-          error =>{
-            alert('Error al obtener listado platos');
-          }
-        )
+  getPLatos(){
+  	this._takeawayService.getCards()
+				.subscribe(
+					result => {
+							this.platos = result.data;
+							this.status = result.status;
+
+							if(this.status !== "success"){
+								alert("Error en el servidor");
+							}
+
+							this.loading = 'hide';
+					},
+					error => {
+						this.errorMessage = <any>error;
+						
+						if(this.errorMessage !== null){
+							console.log(this.errorMessage);
+							alert("Error en la petición getCards");
+						}
+					}
+				);
   }
 
 }

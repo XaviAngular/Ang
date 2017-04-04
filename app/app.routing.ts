@@ -1,10 +1,9 @@
 import {ModuleWithProviders} from "@angular/core";
-import {Routes,RouterModule} from "@angular/router";
+import {Routes, RouterModule} from "@angular/router";
 
-import { InicioComponent } from './inicio/inicio.component';
-import { InfoComponent } from './info/info.component';
-import { FotosComponent } from './fotos/fotos.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { NosotrosComponent } from './nosotros/nosotros.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 const appRoutes: Routes=[
 {
@@ -12,11 +11,10 @@ const appRoutes: Routes=[
 	redirectTo:'/',
 	pathMatch:'full'
 },
-{path: '', component:InicioComponent},
-{path:'info', component:InfoComponent},
-{path:'fotos', component:FotosComponent},
-{path:'contacto', component:ContactoComponent}
+{path: "",  component: InicioComponent},
+{path: "contacto", component: ContactoComponent},
+{path: "nosotros", component: NosotrosComponent}
 ];
 
 export const appRoutingProviders:any[]=[];
-export const routing: ModuleWithProviders=RouterModule.forRoot(appRoutes);
+export const routing: ModuleWithProviders= RouterModule.forRoot(appRoutes);
