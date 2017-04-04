@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {Card} from "../model/card";
 import {takeAwayService} from "../takeaway.service";
+import {FiltroPipe} from "../filtro.pipe";
 
 @Component({
   selector: 'app-inicio',

@@ -5,6 +5,7 @@ export class Card {
 		public precio:number,
 		public foto:string,
 		public descripcion:string,
-		public id_categoria:number
+		public id_categoria:number,
+		public activado:string
 		){}
 }
