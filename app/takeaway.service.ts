@@ -13,5 +13,10 @@ getPlatos(){
 			.map(res=>res.json());
 }
 
+getPlato(id:string){
+	return this._http.get("http://localhost:8080/tkaApi/api.php/getPlato/"+id)
+			.map(res=>res.json());
+}
+
 
 }

@@ -9,8 +9,8 @@
               <th>Ver</th>
           </tr>
     </thead>
-    <tbody *ngFor="let plato of platos">
-		<tr>
+    <tbody>
+		<tr *ngFor="let plato of platos">
 			<td>
 				<img class="activator" width='100' src="assets/{{plato.foto}}">
 			</td>
@@ -21,7 +21,7 @@
 				<span class="right">{{plato.precio}}</span>
 			</td>
 			<td class="center">
-				<span><a [routerLink]="['/Edit-Plato', plato.id]" href=""><i class="material-icons">settings</i></a></span>
+				<span><a [routerLink]="['/edit-plato', plato.id]" href=""><i class="material-icons">settings</i></a></span>
 			</td>
 			<td>
 				<i class="material-icons">visibility</i>

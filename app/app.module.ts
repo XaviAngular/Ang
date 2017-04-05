@@ -14,6 +14,7 @@ import { PlatosComponent } from './lacueva/platos/platos.component';
 
 import {routing,appRoutingProviders} from './app.routing';
 import { FiltroPipe } from './filtro.pipe';
+import { EditPlatoComponent } from './lacueva/edit-plato/edit-plato.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FiltroPipe } from './filtro.pipe';
     LacuevaComponent,
     CategoriasComponent,
     PlatosComponent,
-    FiltroPipe
+    FiltroPipe,
+    EditPlatoComponent
   ],
   imports: [
     BrowserModule,
