@@ -47,6 +47,30 @@ export class EditPlatoComponent implements OnInit {
 
   }
 
+  onSubmit(){
+  	console.log(this.plato);
+  	
+    this._takeAwayService.editPlato(this.id,this.plato).subscribe(
+          result => {
+              this.status=result.status;
+              if(this.status !== "success"){
+                console.log(this.status);
+              }
+              else {console.log("Datos actualizados")}
+                        
+          },
+          error => {
+            this.errorMessage = <any>error;
+            
+            if(this.errorMessage !== null){
+              console.log(this.errorMessage);
+              alert("Error en la petición editPlato");
+            }
+          }
+        );
+
+  }
+
 
 
 
