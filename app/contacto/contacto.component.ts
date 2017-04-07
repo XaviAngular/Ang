@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {takeAwayService} from "../takeaway.service";
+import {Contacto} from "../model/contacto";
 @Component({
   selector: 'app-contacto',
   templateUrl: './contacto.component.html',
@@ -14,6 +15,7 @@ export class ContactoComponent implements OnInit {
   }
 
   onSubmit(form:any){
+  	console.log(form);
   	this._service.addContact(form).subscribe(
           result => {
             if (result.status=="success"){

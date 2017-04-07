@@ -31,4 +31,12 @@ getCats(){
       .map(res=>res.json());
 }
 
+addContact(form:any){
+    let json = JSON.stringify(form);
+    let params = "json="+json;
+    let headers = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
+    return this._http.post("http://localhost:8080/tkaApi/api.php/addContact", 
+        params, {headers: headers}).map(res => res.json());
+}
+
 }

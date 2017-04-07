@@ -16,19 +16,19 @@
 
   <section id="contacto">
     <h3>Formulario Contacto</h3>
-    <form id="contactForm" #contactForm="ngform" (ngSubmit)="onSubmit(contactForm.value)" >
+    <form #formContact="ngForm" (ngSubmit)="onSubmit(formContact.value)">
       <div class="container">
         <div class="row">
           <div class="col l6 m6 s12 input-field">
-          <input id="nombreApellidos" name="nombreApellidos" type="text" class="validate" required>
+          <input ngModel name="nombreApellidos" type="text" class="validate" required>
           <label for="nombreApellido">Nombre</label>
           </div>
           <div class="col l6 m6 s12 input-field">
-          <input id="email" name="email" type="email" class="validate" required>
+          <input ngModel name="email" type="email" class="validate" required>
           <label for="email" data-error="Email incorrecto">Email</label>
           </div>
           <div class="col l12 m12 s12 input-field">
-          <textarea id="mensaje" class="materialize-textarea" name="mensaje"></textarea>
+          <textarea ngModel class="materialize-textarea" name="mensaje"></textarea>
           <label for="mensaje">Mensaje</label>
           </div>
           <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
