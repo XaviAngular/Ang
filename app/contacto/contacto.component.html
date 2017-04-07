@@ -14,8 +14,8 @@
 
     <div class="col s12 m6 l6 valign-wrapper">
 
-  <section id="contacto">
-    <h3>Formulario Contacto</h3>
+  <section id="contacto" *ngIf="!gracias">
+    <h3>Contacto</h3>
     <form #formContact="ngForm" (ngSubmit)="onSubmit(formContact.value)">
       <div class="container">
         <div class="row">
@@ -40,7 +40,7 @@
   </section>
    </div>
    <div id="boxGracias" class="col s12 m6 l6 valign-wrapper">
-  <section id="gracias">
+  <section id="gracias" *ngIf="gracias">
     <div class="container center">
       <h2>Gracias!!</h2>
       <p>Tu mensaje ha sido recibido con éxito, en breve recibirás noticias nuestras</p>

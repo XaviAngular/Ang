@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {takeAwayService} from "../takeaway.service";
-import {Contacto} from "../model/contacto";
+
 @Component({
   selector: 'app-contacto',
   templateUrl: './contacto.component.html',
@@ -8,8 +8,10 @@ import {Contacto} from "../model/contacto";
   providers:[takeAwayService]
 })
 export class ContactoComponent implements OnInit {
-
-  constructor(private _service:takeAwayService) { }
+	public gracias:boolean;
+  constructor(private _service:takeAwayService) {
+  	this.gracias=false;
+  }
 
   ngOnInit() {
   }
@@ -20,6 +22,7 @@ export class ContactoComponent implements OnInit {
           result => {
             if (result.status=="success"){
              console.log("Contacto recibido");
+             this.gracias=true;
             }
             else {
               alert("Error petición Mysql");
