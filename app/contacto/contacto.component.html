@@ -16,7 +16,7 @@
 
   <section id="contacto">
     <h3>Formulario Contacto</h3>
-    <form id="contactForm" action="php/recibedatos.php" method="post">
+    <form id="contactForm" #contactForm="ngform" (ngSubmit)="onSubmit(contactForm.value)" >
       <div class="container">
         <div class="row">
           <div class="col l6 m6 s12 input-field">
