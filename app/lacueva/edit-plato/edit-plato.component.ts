@@ -3,6 +3,8 @@ import {Router,ActivatedRoute, Params} from '@angular/router';
 import {takeAwayService} from "../../takeaway.service";
 import {Card} from "../../model/card";
 
+declare var Materialize:any;
+
 @Component({
   selector: 'app-edit-plato',
   templateUrl: './edit-plato.component.html',
@@ -14,6 +16,7 @@ export class EditPlatoComponent implements OnInit {
 	public id:string;
 	public status:string;
 	public errorMessage:any;
+  public cats;
   constructor(
   	private _takeAwayService: takeAwayService,
   	private _route:ActivatedRoute,
@@ -23,6 +26,8 @@ export class EditPlatoComponent implements OnInit {
   ngOnInit() {
   	this.plato= new Card(0,"",0,"","",0,"");
   	this.getPlatoInfo();
+    this.getCats();
+   
   }
 
   getPlatoInfo(){
@@ -46,6 +51,23 @@ export class EditPlatoComponent implements OnInit {
         )
 
   }
+  getCats(){
+    this._takeAwayService.getCats()
+      .subscribe(
+          result => {
+            if (result.status=="success"){
+             this.cats=result.data;
+             console.log(this.cats);
+            }
+            else {
+              alert("Error petición Mysql");
+            }
+          },
+          error =>{
+            alert('Error al obtener listado categorias');
+          }
+        )
+  }
 
   onSubmit(){
   	console.log(this.plato);
@@ -56,7 +78,10 @@ export class EditPlatoComponent implements OnInit {
               if(this.status !== "success"){
                 console.log(this.status);
               }
-              else {console.log("Datos actualizados")}
+              else {
+                console.log("Datos actualizados");
+                Materialize.toast('Datos actualizados!', 4000);
+              }
                         
           },
           error => {

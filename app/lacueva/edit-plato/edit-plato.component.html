@@ -1,6 +1,6 @@
-<h2>Nuevo Plato</h2>
+<h2>Editar {{plato.nombre}}</h2>
     <form #formPlato="ngForm" (ngSubmit)="onSubmit()" id="formPlato">
-    <div class="row">
+    <div class="row" style="margin-bottom: 60px">
     <div class="col s12 m12 l12 input-field">
         <div class="switch">
     <label>
@@ -11,8 +11,14 @@
     </label>
   </div>
     </div>
-    <div class="col s12 m6 l6 input-field">
-       <select id="categoria" name="id_categoria">
+    </div>
+    <div class="row">
+    <div class="col s12 m6 l6 input-field">    
+       <select [(ngModel)]="plato.id_categoria" id="categoria" name="id_categoria" class="browser-default">
+          <option value="select">categoria</option> 
+          <option value="1">Entrantes</option>
+          <option value="2">Primeros</option>
+          <option value="3">Postres</option>
        </select>
     </div>
     <div class="col s12 m6 l6 input-field">
@@ -39,4 +45,4 @@
       </button>
     </div>
   </div>
-</form>  
+</form>
