@@ -26,5 +26,9 @@ editPlato(id: string, plato: Card) {
     return this._http.post("http://localhost:8080/tkaApi/api.php/editPlato/"+id, 
         params, {headers: headers}).map(res => res.json());
   }
+getCats(){
+  return this._http.get("http://localhost:8080/tkaApi/api.php/getCats")
+      .map(res=>res.json());
+}
 
 }
